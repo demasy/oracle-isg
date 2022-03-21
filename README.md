@@ -7,3 +7,4 @@
 - Create the integration repository loader file (iLDT) file using Putty
 - Deploy the custom PL/SQL interface as REST services in the Oracle Integration Repository
 - Create the necessary security grants for the custom integration interfaces
+- Test the REST-API web service
