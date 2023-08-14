@@ -30,7 +30,12 @@
                                      AND TRUNC (FL.END_DATE_ACTIVE)
               OR FL.END_DATE_ACTIVE IS NULL)
 ORDER BY FL.LOOKUP_CODE NULLS LAST
+```
 
+```sql
+SELECT *
+  FROM FND_LOOKUP_ASSIGNMENTS
+ WHERE LOOKUP_TYPE = 'BUSINESS_ENTITY' AND LOOKUP_CODE = 'PER_EMPLOYEE';
 ```
 
 ### How to Deploy the ISG Services
