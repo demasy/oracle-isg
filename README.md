@@ -38,7 +38,7 @@ SELECT *
  WHERE LOOKUP_TYPE = 'BUSINESS_ENTITY' AND LOOKUP_CODE = 'PER_EMPLOYEE';
 ```
 
-### How to Deploy the ISG Services
+### Generate the iLDT file
 
 ```shell
 $GL_TOP/patch/115/sql
@@ -51,7 +51,6 @@ $IAS_ORACLE_HOME/perl/bin/perl $FND_TOP/bin/irep_parser.pl -g -v -username=sysad
 ```shell
 $IAS_ORACLE_HOME/perl/bin/perl $FND_TOP/bin/irep_parser.pl -g -v -username=sysadmin gl:patch/115/sql:<database-package-name>.pls:12.0=/tmp/<database-package-name>.pls
 ```
-
 
 
 ### Use FNDLOAD to upload these ildt files
