@@ -33,9 +33,24 @@ ORDER BY FL.LOOKUP_CODE NULLS LAST
 
 ```
 
+### How to Deploy the ISG Services
 
-<br>
-
+```shell
+$GL_TOP/patch/115/sql
 ```
-$FND_TOP/bin/FNDLOAD apps/<password> 0 Y UPLOAD $FND_TOP/patch/115/import/wfirep.lct $FND_TOP/patch/115/irep/patch/115/sql/AFCPREQS_pls.ildt
+
+```shell
+$IAS_ORACLE_HOME/perl/bin/perl $FND_TOP/bin/irep_parser.pl -g -v -username=sysadmin per:$FND_TOP/patch/115/sql:<database-package-name>.pls:12.0=<database-package-name>.pls
+```
+
+```shell
+$IAS_ORACLE_HOME/perl/bin/perl $FND_TOP/bin/irep_parser.pl -g -v -username=sysadmin gl:patch/115/sql:<database-package-name>.pls:12.0=/tmp/<database-package-name>.pls
+```
+
+```shell
+cd $FND_TOP/patch/115/sql/
+```
+
+```shell
+$FND_TOP/bin/FNDLOAD apps/<apps-password> 0 Y UPLOAD $FND_TOP/patch/115/import/wfirep.lct $FND_TOP/patch/115/sql/<database-package-name>_pls.ildt - WARNING=YES UPLOAD_MODE=REPLACE CUSTOM_MODE=FORCE
 ```
