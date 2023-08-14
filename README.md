@@ -3,7 +3,7 @@
 
 <br>
 
-## Create custom PL/SQL package as Oracle REST-API web service
+## Create a custom PL/SQL package as an Oracle REST-API web service
 - Prerequisite
 - Create the PL/SQL package in the database
 - Create a annotated interface file based on annotation standards.
@@ -17,7 +17,21 @@
 - Test the REST-API web service
 
 
+<br>
 
+### Find business entity SQL 
+```sql
+  SELECT FL.LOOKUP_CODE, FL.MEANING, FL.DESCRIPTION
+    FROM FND_LOOKUPS FL
+   WHERE     FL.LOOKUP_TYPE = 'BUSINESS_ENTITY'
+         --         AND FL.LOOKUP_CODE = 'PER_EMPLOYEE'
+         AND FL.ENABLED_FLAG = 'Y'
+         AND (   TRUNC (SYSDATE) BETWEEN TRUNC (FL.START_DATE_ACTIVE)
+                                     AND TRUNC (FL.END_DATE_ACTIVE)
+              OR FL.END_DATE_ACTIVE IS NULL)
+ORDER BY FL.LOOKUP_CODE NULLS LAST
+
+```
 
 
 <br>
