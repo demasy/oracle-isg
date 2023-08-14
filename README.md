@@ -52,6 +52,10 @@ $IAS_ORACLE_HOME/perl/bin/perl $FND_TOP/bin/irep_parser.pl -g -v -username=sysad
 $IAS_ORACLE_HOME/perl/bin/perl $FND_TOP/bin/irep_parser.pl -g -v -username=sysadmin gl:patch/115/sql:<database-package-name>.pls:12.0=/tmp/<database-package-name>.pls
 ```
 
+
+
+### Use FNDLOAD to upload these ildt files
+
 ```shell
 cd $FND_TOP/patch/115/sql/
 ```
